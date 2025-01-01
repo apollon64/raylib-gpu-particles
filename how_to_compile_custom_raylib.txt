@@ -1,0 +1,7 @@
+# Compiled my own Raylib from source using VS2019 x64 command line prompt
+# Step 1, checkout raylib on github
+# Step 2, launch VS x64 cmd line prompt window
+# Step 3, cd to raylib/src
+# Step 4:
+cl -Iexternal/glfw/include/ -Iexternal -I. /DGRAPHICS_API_OPENGL_43 /DPLATFORM_DESKTOP /D_USRDLL /D_WINDLL /DBUILD_LIBTYPE_SHARED raudio.c rcore.c rglfw.c rmodels.c rshapes.c rtext.c rtextures.c utils.c /link kernel32.lib user32.lib shell32.lib winmm.lib gdi32.lib opengl32.lib /SUBSYSTEM:CONSOLE /ENTRY:_DllMainCRTStartup /DLL /OUT:raylib.dll
+# Step 5: Copy raylib.dll to location where you run Odin program
